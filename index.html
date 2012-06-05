@@ -6,10 +6,12 @@
 
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/prettify.css" />
     <link rel="stylesheet" href="css/main.css" />
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/prettify.js"></script>
     <script type="text/javascript" src="http://use.typekit.com/klk4dac.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
@@ -335,10 +337,139 @@
               <h1 class="title serif">What functionality do we want to support</h1>
             </div>
             <ul>
-              <li>Users</li>
-              <li>Tweets (140 character status messages)</li>
-              <li>Streams (user's own tweets + the tweets of people the user follows)</li>
+              <li><b class="blue">[public]</b> We want people to be able to register and create unique identities</li>
+              <li><b class="blue">[public]</b> We want users to login before they can do anything with their own accounts</li>
+              <li><b class="blue">[public]</b> We want users to be able to view information about other users</li>
+              <li><b class="blue">[public, auth]</b> We want users to be able to follow other users</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-4" class="step twitter-thingy twitter-thingy-4" data-x="2800" data-y="1200" data-z="-5000" data-rotate-z="90">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform Example</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">What functionality do we want to support continued</h1>
+            </div>
+            <ul>
+              <li><b class="blue">[public, auth]</b> We want users to be able to post 140 character status messages that are visible to the public</li>
+              <li><b class="blue">[public]</b> We want to be able to retrieve single tweets</li>
+              <li><b class="blue">[private]</b> We want tweets published into our follower’s streams</li>
+              <li><b class="blue">[public, auth]</b> We want to be able to view our own streams, but no one else's</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-5" class="step twitter-thingy twitter-thingy-5" data-x="1800" data-y="1200" data-z="-5000" data-rotate-z="180">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform Example</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Determine how to expose the public functions</h1>
+            </div>
+            <p>We want to consume <span class="blue">JSON</span> requests and return data in a <span class="blue">JSON</span> format as well</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-6" class="step twitter-thingy twitter-thingy-6" data-x="1800" data-y="2200" data-z="-5000" data-rotate-z="270">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Defining the Functionality</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Determine how to expose the public functions</h1>
+            </div>
+            <h2 class="blue">Users</h2>
+            <ul>
+              <li><code>register (alias, email, password, name, url)</code><br /><em>returns successful or error c</em>ode</li>
+              <li><code>login (alias, password)</code><br /><em>returns success or error code</em></li>
+              <li><code>get (alias)</code><br /><em>returns information about the user (in this case name, email addr</em>ess, list of follower’s aliases) or an error code</li>
+              <li><code>follow (alias, followee_alias)</code><br /><em>returns successful or error code</em></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-7" class="step twitter-thingy twitter-thingy-7" data-x="1800" data-y="2200" data-z="-4500" data-rotate-z="270">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Defining the Functionality</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Determine how to expose the public functions</h1>
+            </div>
+            <h2 class="blue">Tweets</h2>
+            <ul>
+              <li><code>get (id)</code><br /><em>returns a single tweet message or error code</em></li>
+              <li><code>list (alias)</code><br /><em>returns a list of tweets for a specific user sorted by </em>most recent first or an error code</li>
+              <li><code>add (alias, message)</code><br /><em>returns successful or error code</em></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-8" class="step twitter-thingy twitter-thingy-8" data-x="1800" data-y="2200" data-z="-4000" data-rotate-z="270">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Defining the Functionality</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Determine how to expose the public functions</h1>
+            </div>
+            <h2 class="blue">Streams</h2>
+            <ul>
+              <li><code>list (alias)</code><br /><em>returns a list of tweets for the alias and the users that alias follows sorted by most recent first or an error code</em></li>
+              <li><code>addTweet (alias, message)</code><br /><em>add a tweet message to the specified user’s stream</em></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-9" class="step twitter-thingy twitter-thingy-9" data-x="2800" data-y="2200" data-z="-4000" data-rotate-z="180">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform Example</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Determining the Routes</h1>
+            </div>
+            <ul>
+              <li><code>[POST]</code> - api.mini-twitter.com/v1/users/register</li>
+              <li><code>[POST]</code> - api.mini-twitter.com/v1/users/login</li>
+              <li><code>[GET]</code> - api.mini-twitter.com/v1/users/:alias</li>
+              <li><code>[POST]</code> - api.mini-twitter.com/v1/relationships/follow</li>
+              <li><code>[POST]</code> - api.mini-twitter.com/v1/tweets</li>
+              <li><code>[GET]</code> - api.mini-twitter.com/v1/tweets{?alias=:alias}</li>
+              <li><code>[GET]</code> - api.mini-twitter.com/v1/tweets/:id</li>
+              <li><code>[GET]</code> - api.mini-twitter.com/v1/tweets/stream</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-10" class="step twitter-thingy twitter-thingy-10" data-x="2800" data-y="1200" data-z="-4000" data-rotate-z="180">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform Example</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Setup the initial app</h1>
+            </div>
+            <pre class="prettyprint linenums lang-js">
+              var express  = require('express')
+                , mongojs  = require('mongojs')
+                , sanitize = require('./middleware/sanitize')
+                , users    = require('./routes/users')
+                , tweets   = require('./routes/tweets')
+                , streams  = require('./routes/streams')
+                , app      = express.createServer();
+
+              mongojs.connect(process.env['MONGO_URL']);
+
+              app.use(express.bodyParser());
+              app.use(express.cookieParser());
+              app.use(express.session({ secret: 'secret'}));
+              app.use(express.methodOverride());
+            </pre>
           </div>
         </div>
       </section>

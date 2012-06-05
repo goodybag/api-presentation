@@ -83,6 +83,11 @@ ul {
   color: #555;
   margin: 18px 0 12px 44px;
 }
+pre {
+  margin: 0 20px;
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+}
 
 
 .serif {
@@ -128,17 +133,21 @@ ul {
   font-size: 1.5rem;
   font-weight: 500;
 }
+.page .title-wrapper {
+  margin-bottom: 24px;
+  padding-bottom: 4px;
+}
 .page .content {
   color: #444;
   text-shadow: 0 1px 0 #fff;
 }
 .page .content.with-topic {
   position: relative;
-  padding-left: 100px;
+  padding-left: 120px;
 }
 .page .content .topic {
   position: absolute;
-  left: -300px;
+  left: -250px;
   top: 50%;
   margin-top: -120px;
   width: 600px;
@@ -181,8 +190,6 @@ ul {
   margin: 14px;
 }
 .cube .title-wrapper {
-  margin-bottom: 24px;
-  padding-bottom: 4px;
   border-bottom: dotted 3px #aaa;
 }
 .cube .title {
@@ -402,6 +409,9 @@ ul {
   font-size: 4rem;
   line-height: 3.7rem;
   margin-top: 40px;
+}
+.twitter-thingy-6 code {
+  font-size: 0.8rem;
 }
 /*.twitter-thingy .animated-border {
   width: 1px;
