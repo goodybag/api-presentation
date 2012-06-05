@@ -1,3 +1,12 @@
+/*****************************************************************************\
+    I apologize for the messiness of this code - I was working very quickly.
+
+    -john
+\*****************************************************************************/
+
+
+
+
 /*************************\
     Frawework-ish Stuff
 \*************************/
@@ -85,6 +94,10 @@ ul {
 
 .blue {
   color: #009cff;
+}
+
+.step {
+  width: 1000px;
 }
 
 .gb-bg {
@@ -233,7 +246,6 @@ ul {
 }
 
 .what-are-apis {
-  width: 1000px;
   padding-left: 80px;
 }
 .what-are-apis .next-direction {
@@ -331,10 +343,93 @@ ul {
 
 
 .how-to-build {
-  width: 1000px;
   opacity: 0;
   -webkit-transition: opacity 1s linear;
 }
 .how-to-build.active {
   opacity: 1;
 }
+.how-to-build .content.with-topic .topic {
+  margin-top: -80px;
+}
+
+.why-technologies {
+  opacity: 0;
+  -webkit-transition: opacity 1s linear;
+}
+.why-technologies.active {
+  opacity: 1;
+}
+.why-technologies .content.with-topic .topic {
+  margin-top: -40px;
+}
+.why-technologies .logo-container {
+  margin-top: 60px;
+  padding: 10px;
+  text-align: center;
+  background-color: #46483E;
+}
+.why-technologies .logo-container > .logo {
+  margin-left: 164px;
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+}
+.why-technologies .logo-container > .logo:first-child {
+  margin-left: 0;
+  -webkit-transform: translateX(-300px);
+}
+.why-technologies .logo-container > .logo:first-child + .logo {
+  -webkit-transform: translateX(300px);
+}
+.why-technologies.present .logo-container > .logo,
+.why-technologies.present .logo-container > .logo:first-child + .logo {
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+
+.twitter-thingy {
+  opacity: 0;
+  -webkit-transition: opacity 1s linear;
+}
+.twitter-thingy .title {
+  width: 800px;
+}
+.twitter-thingy.active {
+  opacity: 1;
+}
+.twitter-thingy .title > .platform {
+  font-size: 4rem;
+  line-height: 3.7rem;
+  margin-top: 40px;
+}
+/*.twitter-thingy .animated-border {
+  width: 1px;
+  height: 1px;
+  padding: 10px;
+  position: absolute;
+  border-radius: 25px;
+  border-size: 10px;
+  border-style: dotted;
+}
+.twitter-thingy .animated-border.border-1 {
+  border-color: #888;
+  border-right: 0;
+  border-bottom: 0;
+  -webkit-transition:
+    height 1s linear 1s
+  , width 1s linear 1s
+}
+.twitter-thingy .animated-border.border-2 {
+  border-color: #009cff;
+  border-left: 0;
+  border-top: 0;
+  -webkit-transition:
+    height 1s linear
+  , width 1s linear
+}
+.twitter-thingy.present .animated-border.border-1,
+.twitter-thingy.present .animated-border.border-2 {
+  width: 800px;
+  height: 120px;
+}*/
