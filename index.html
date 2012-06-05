@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/prettify.css" />
+    <link rel="stylesheet" href="css/prettify.css" type="text/css" />
     <link rel="stylesheet" href="css/main.css" />
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
@@ -15,7 +15,7 @@
     <script type="text/javascript" src="http://use.typekit.com/klk4dac.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
-  <body>
+  <body onload="prettyPrint()">
     <div id="impress" >
       <!-- ########### -->
       <!-- ## INTRO ## -->
@@ -81,7 +81,7 @@
         </div>
       </section>
 
-      <section id="what-are-apis-2" class="step what-are-apis what-are-apis-2" data-x="-800" data-y="3000" data-z="-2000" data-perspective="1000" data-rotate-z="0">
+      <section id="what-are-apis-2" class="step what-are-apis what-are-apis-2" data-x="-1000" data-y="3000" data-z="-2000" data-perspective="1000" data-rotate-z="0">
         <div class="page">
           <div class="content with-topic">
             <h2 class="topic">What are APIs?</h2>
@@ -316,7 +316,7 @@
       <section id="twitter-thingy-2" class="step twitter-thingy twitter-thingy-2" data-x="2800" data-y="2000" data-z="-5500">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Twitter Platform Example</h2>
+            <h2 class="topic">Twitter Platform</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Identify the components of our system</h1>
             </div>
@@ -332,7 +332,7 @@
       <section id="twitter-thingy-3" class="step twitter-thingy twitter-thingy-3" data-x="2800" data-y="1200" data-z="-5500" data-rotate-z="90">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Twitter Platform Example</h2>
+            <h2 class="topic">Twitter Platform</h2>
             <div class="title-wrapper">
               <h1 class="title serif">What functionality do we want to support</h1>
             </div>
@@ -349,7 +349,7 @@
       <section id="twitter-thingy-4" class="step twitter-thingy twitter-thingy-4" data-x="2800" data-y="1200" data-z="-5000" data-rotate-z="90">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Twitter Platform Example</h2>
+            <h2 class="topic">Twitter Platform</h2>
             <div class="title-wrapper">
               <h1 class="title serif">What functionality do we want to support continued</h1>
             </div>
@@ -366,7 +366,7 @@
       <section id="twitter-thingy-5" class="step twitter-thingy twitter-thingy-5" data-x="1800" data-y="1200" data-z="-5000" data-rotate-z="180">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Twitter Platform Example</h2>
+            <h2 class="topic">Twitter Platform</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Determine how to expose the public functions</h1>
             </div>
@@ -378,7 +378,7 @@
       <section id="twitter-thingy-6" class="step twitter-thingy twitter-thingy-6" data-x="1800" data-y="2200" data-z="-5000" data-rotate-z="270">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Defining the Functionality</h2>
+            <h2 class="topic">Functionality</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Determine how to expose the public functions</h1>
             </div>
@@ -396,7 +396,7 @@
       <section id="twitter-thingy-7" class="step twitter-thingy twitter-thingy-7" data-x="1800" data-y="2200" data-z="-4500" data-rotate-z="270">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Defining the Functionality</h2>
+            <h2 class="topic">Functionality</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Determine how to expose the public functions</h1>
             </div>
@@ -413,7 +413,7 @@
       <section id="twitter-thingy-8" class="step twitter-thingy twitter-thingy-8" data-x="1800" data-y="2200" data-z="-4000" data-rotate-z="270">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Defining the Functionality</h2>
+            <h2 class="topic">Functionality</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Determine how to expose the public functions</h1>
             </div>
@@ -429,7 +429,7 @@
       <section id="twitter-thingy-9" class="step twitter-thingy twitter-thingy-9" data-x="2800" data-y="2200" data-z="-4000" data-rotate-z="180">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Twitter Platform Example</h2>
+            <h2 class="topic">Twitter Platform</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Determining the Routes</h1>
             </div>
@@ -450,30 +450,255 @@
       <section id="twitter-thingy-10" class="step twitter-thingy twitter-thingy-10" data-x="2800" data-y="1200" data-z="-4000" data-rotate-z="180">
         <div class="page">
           <div class="content with-topic">
-            <h2 class="topic">Twitter Platform Example</h2>
+            <h2 class="topic">Twitter Platform</h2>
             <div class="title-wrapper">
               <h1 class="title serif">Setup the initial app</h1>
             </div>
             <pre class="prettyprint linenums lang-js">
-              var express  = require('express')
-                , mongojs  = require('mongojs')
-                , sanitize = require('./middleware/sanitize')
-                , users    = require('./routes/users')
-                , tweets   = require('./routes/tweets')
-                , streams  = require('./routes/streams')
-                , app      = express.createServer();
+var express  = require('express')
+  , mongojs  = require('mongojs')
+  , sanitize = require('./middleware/sanitize')
+  , users    = require('./routes/users')
+  , tweets   = require('./routes/tweets')
+  , streams  = require('./routes/streams')
+  , app      = express.createServer();
 
-              mongojs.connect(process.env['MONGO_URL']);
+mongojs.connect(process.env['MONGO_URL']);
 
-              app.use(express.bodyParser());
-              app.use(express.cookieParser());
-              app.use(express.session({ secret: 'secret'}));
-              app.use(express.methodOverride());
+app.use(express.bodyParser());
+app.use(express.cookieParser());
+app.use(express.session({ secret: 'secret'}));
+app.use(express.methodOverride());
             </pre>
           </div>
         </div>
       </section>
+
+      <section id="twitter-thingy-11" class="step twitter-thingy twitter-thingy-11" data-x="2800" data-y="200" data-z="-4000" data-rotate-z="90">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Expose the Routes</h1>
+            </div>
+            <pre class="prettyprint linenums lang-js">
+app.post('/v1/users/register', sanitize, users.register);
+app.post('/v1/users/login', sanitize, users.login);
+app.get('/v1/users/:alias', sanitize, users.get);
+app.post('/v1/relationships/follow', auth.check, sanitize, users.follow);
+app.post('/v1/tweets', auth.check, sanitize, tweets.add);
+app.get('/v1/tweets', sanitize, tweets.list);
+app.get('/v1/tweets/:id', sanitize, tweets.get);
+app.get('/v1/tweets/stream', auth.check, sanitize, streams.list);
+
+app.listen(parseInt(process.env['PORT_WWW']));
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-12" class="step twitter-thingy twitter-thingy-12" data-x="3800" data-y="1200" data-z="-4000" data-rotate-z="180">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Handle the Routes</h1>
+            </div>
+            <h2 class="blue">users.js</h2>
+            <pre class="prettyprint linenums lang-js">
+// users.js
+
+var api    = require('./api')
+  , routes = module.exports;
+
+routes.register = function (req, res) {
+  api.users.register(req.body, function(err)){
+    if (err) {
+      res.send(err.message, 500);
+      return;
+    }
+    res.send(200);
+  }
+}
+
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-13" class="step twitter-thingy twitter-thingy-13" data-x="3800" data-y="1200" data-z="-3500" data-rotate-z="180">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Handle the Routes</h1>
+            </div>
+            <h2 class="blue">api/users.js</h2>
+            <pre class="prettyprint linenums lang-js">
+// api/users.js
+
+...
+op.add = function (data, callback) {
+  var user = {
+    email: data.email
+  , password: data.password
+  , alias: data.alias
+  , name: data.name
+  };
+
+  db.users.schema.validate.add(user), function(err){
+    if (err) callback(errs.SCHEMA_VALIDATION_ERROR);
+    else db.users.collection.insert(, { safe: true }, callback || noop);
+  });
+};
+...
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="twitter-thingy-14" class="step twitter-thingy twitter-thingy-14" data-x="3800" data-y="2200" data-z="-3500" data-rotate-z="90">
+        <div class="page">
+          <div class="content with-topic">
+            <h2 class="topic">Twitter Platform</h2>
+            <div class="title-wrapper">
+              <h1 class="title serif">Don't forget</h1>
+            </div>
+            <ul>
+              <li>Build clients to your APIs</li>
+              <li>Write unit tests</li>
+              <li>Thorough documentation means high adoptability</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ############### -->
+      <!-- ## PLATFORMS ## -->
+      <!-- ############### -->
+      <section id="platforms-1" class="step platforms platforms-1" data-x="2800" data-y="2000">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="title-wrapper">
+              <h1 class="title serif">Platforms</h1>
+              <h2 class="sub-title">And that's it - You've built an API</h2>
+            </div>
+            <p>You've built a platform for succinct communication.</p>
+            <p>Now you can:</p>
+            <ul>
+              <li>Built web or mobile apps</li>
+              <li>Completely separate products that utilize your platform</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms-2" class="step platforms platforms-2" data-x="2800" data-y="2000" data-z="500">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="title-wrapper">
+              <h1 class="title serif">Platforms</h1>
+              <h2 class="sub-title">Building a platform is no easy task - we only touched on a few components</h2>
+            </div>
+            <p>Each system will have its own set of challenges. It's important that you identify them and address them head on.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms-3" class="step platforms platforms-3" data-x="1800" data-y="2000" data-z="500" data-rotate-z="90">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="title-wrapper">
+              <h1 class="title serif">Platforms</h1>
+              <h2 class="sub-title">Our platform was simple, but the real world is much crazier</h2>
+            </div>
+            <div class="inline-columns">
+              <div class="column" style="width: 68%; margin-right: 2%">
+                <p>Twitter has <b class="blue">TONS</b> of users. So when <em>Justin Bieber</em> tweets, <b>All hell breaks loose</b>.</p>
+                <p>Twitter has obviously optimized for the <em>Bieber Case</em>.</p>
+              </div>
+              <div class="column" style="width: 30%">
+                <img src="img/bieber.jpg" style="max-width: 100%" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms-4" class="step platforms platforms-4" data-x="2800" data-y="2800" data-z="-500">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="title-wrapper">
+              <h1 class="title serif">The Goodybag Platform</h1>
+              <h2 class="sub-title">Goodybag our platform faced some of the following challenges</h2>
+            </div>
+            <ul>
+              <li>Financial matters – <em>consistency, reliability, and availability</em></li>
+              <li>Low latency responses</li>
+              <li>And most important to us is security and privacy</li>
+            </ul>
+            <p>Keeping these things in mind we thought hard about our technologies and setting up our architecture.</p>
+          </div>
+        </div>
+      </section>
+      <section id="platforms-5" class="step platforms platforms-5" data-x="2800" data-y="2800" data-z="1000">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="gb-cards">
+              <img src="img/gb-cards.png" />
+            </div>
+            <div class="title-wrapper">
+              <h1 class="title serif">Let's see a TapIn at <div class="goodybag blue">Goodybag</div></h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <img id="platforms-6" style="width: 800px; box-shadow: 0 0 35px rgba(0,0,0, 0.4)" class="step platforms" src="img/tapin-diagram.png" data-x="2800" data-y="2800" data-z="1500" />
+      <img id="platforms-7" style="width: 800px; box-shadow: 0 0 35px rgba(0,0,0, 0.4)" class="step platforms" src="img/platform-diagram.png" data-x="2800" data-y="2800" data-z="1500" />
+      <img id="platforms-8" style="width: 800px; box-shadow: 0 0 35px rgba(0,0,0, 0.4)" class="step platforms" src="img/goodybag-diagram.png" data-x="2800" data-y="2800" data-z="1500" />
+
+      <section id="platforms-9" class="step platforms platforms-9" data-x="2800" data-y="3600" data-z="1000" data-rotate-z="90">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="title-wrapper">
+              <h1 class="title serif">Adding Value</h1>
+              <h2 class="sub-title">Every one of our products uses our API</h2>
+            </div>
+            <ul>
+              <li>Consumer Site - SPA</li>
+              <li>Business Site - SPA</li>
+              <li>Consumer Mobile App (Native/Web) – iOS/Android/Web</li>
+              <li>Business Mobile App (Native) – iOS/Android/Web</li>
+              <li>Tablet App (Native) – Java (Where actual redemption occurs)</li>
+              <li>Admin Interface – SPA</li>
+              <li>Analytics Dashboard - SPA</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms-10" class="step platforms platforms-10" data-x="2800" data-y="2600" data-z="1000" data-rotate-z="180">
+        <div class="page">
+          <div class="content with-topic">
+            <div class="title-wrapper">
+              <h1 class="title serif">So, let's recap</h1>
+              <h2 class="sub-title">Why you should build APIs <em>almost</em> all of your apps</h2>
+            </div>
+            <ul>
+              <li>You don’t look like a <span class="blue">n00b</span> – <em>Just Kidding</em></li>
+              <li>Awesome segregation of code</li>
+              <li>It’s all about enabling others to doing things</li>
+              <li>Enables you to hire more than just full stack engineers</li>
+              <li>Easily integrate with other services</li>
+              <li>Enables 3rd party developers</li>
+              <li><em>Even Obama</em> is requiring all Federal Agencies to build APIs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
+
     <script type="text/javascript" src="js/impress.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
