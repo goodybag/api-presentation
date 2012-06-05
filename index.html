@@ -1,19 +1,34 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <link rel="stylesheet" href="css/boostrap.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/main.css" />
 
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/impress.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://use.typekit.com/klk4dac.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script type="text/javascript" src="js/app.js"></script>
   </head>
   <body>
-    <div id="impress">
-
+    <div id="impress" >
+      <div id="cube-1" class="step cube cube-1 vcentered-box hcentered-box" data-x="0" data-y="50">
+        <div class="wrapper">
+          <h1 class="title">Building APIs</h1>
+          <span class="by">by</span>
+          <h2 class="signature script">Lalit Kapoor</h2>
+        </div>
+      </div>
+      <div id="cube-2" class="step cube cube-2" data-x="300" data-y="50" data-z="-300" data-perspective="1000" data-rotate-y="90">
+        <h1>Just Testing</h1>
+      </div>
+      <div id="cube-3" class="step cube cube-3" data-x="0" data-y="350" data-z="-300" data-perspective="1000" data-rotate-x="-90" data-rotate-z="90">
+        <h1>Just Testing</h1>
+      </div>
     </div>
+    <script type="text/javascript" src="js/impress.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
