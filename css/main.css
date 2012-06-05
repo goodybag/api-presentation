@@ -1,0 +1,9 @@
+html, body {
+  font-family: "museo-sans";
+}
+.serif {
+  font-family: "museo-slab" !important;
+}
+.script {
+  font-family: "bello-pro";
+}
